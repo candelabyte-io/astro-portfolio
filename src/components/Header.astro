@@ -1,6 +1,6 @@
 ---
 import ThemeToggle from "@/components/ThemeToggle.astro";
-import { Github } from "lucide-react";
+import { Github, Menu } from "lucide-react";
 import { SiteConfig } from "@/content/config";
 
 const navigationLinks = [
@@ -18,7 +18,7 @@ const navigationLinks = [
       <span>{SiteConfig.siteTitle}</span>
     </a>
 
-    <nav class="flex items-center gap-2">
+    <nav class="hidden md:flex items-center gap-4">
       {navigationLinks.map((link) => (
         <a
           href={link.href}
@@ -29,19 +29,60 @@ const navigationLinks = [
           {link.label}
         </a>
       ))}
-      <ThemeToggle />
     </nav>
 
-  <a
+    <div class="flex items-center gap-2">
+
+     <a
     href={SiteConfig.githubUrl}
     target="_blank"
     rel="noopener noreferrer"
-    class="group relative inline-flex items-center gap-2 rounded-xl border border-border/50 bg-background px-5 py-2.5 font-semibold shadow-sm transition-all duration-300 hover:border-foreground/70 hover:shadow-md hover:scale-105"
-  >
+    class="hidden md:inline-flex group relative items-center gap-2 rounded-xl border border-border/50 bg-background 
+           px-5 py-2.5 font-semibold shadow-sm transition-all duration-300 hover:border-foreground/70 hover:shadow-md hover:scale-105 
+           whitespace-nowrap"
+>
     <span class="absolute bottom-0 left-0 h-[2px] w-full scale-x-0 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 transition-transform duration-300 group-hover:scale-x-100"></span>
-
     <Github class="h-5 w-5 text-foreground" />
     <span class="text-foreground">Fork me on GitHub</span>
-  </a>
+</a>
+
+
+      <button
+        id="mobile-menu-toggle"
+        class="md:hidden p-2 rounded-lg hover:bg-accent"
+        aria-label="Open menu"
+        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+      >
+        <Menu class="h-6 w-6" />
+      </button>
+
+            <ThemeToggle />
+
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t bg-background">
+    <nav class="flex flex-col p-4 space-y-2">
+      {navigationLinks.map((link) => (
+        <a
+          href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
+          class="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:bg-accent hover:text-foreground transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+
+      <a
+        href={SiteConfig.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex items-center gap-2 rounded-lg border border-border/50 bg-background px-4 py-2 font-semibold shadow-sm transition-all duration-300 hover:border-foreground/70 hover:shadow-md hover:scale-105"
+      >
+        <Github class="h-5 w-5 text-foreground" />
+        <span class="text-foreground">Fork me on GitHub</span>
+      </a>
+    </nav>
   </div>
 </header>
