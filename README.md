@@ -55,13 +55,13 @@ This template comes pre-configured for deployment on **Vercel**, **Netlify**, an
 
 This template includes a GitHub Actions workflow that automatically deploys your site to GitHub Pages when you push to the main branch.
 
-GitHub Pages offers two deployment options:
-
 - **Repository Name**: Must be exactly `[your-username].github.io` (e.g., `jcarloscandela.github.io`)
 - **Deployed URL**: `https://[your-username].github.io/` (root domain)
 - **Setup**: 
-  1. Rename your repository to `[your-username].github.io`
-  2. Update the Astro configuration if needed (the template supports both options)
+  1. Fork this repository to `[your-username].github.io`
+  2. Enable GitHub Actions in your repository settings
+  3. Rename your repository to `[your-username].github.io`
+  4. Update the Astro configuration if needed (the template supports both options)
 
 **Deployment Steps:**
 1. Enable GitHub Pages in your repository settings:

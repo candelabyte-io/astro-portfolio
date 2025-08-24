@@ -3,6 +3,7 @@ import { buttonVariants } from "@/components/ui/button";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import LatestPosts from "@/components/LatestPosts.astro";
 import { SiteConfig } from "@/content/config";
+import { Github } from "lucide-react";
 ---
 
 <BaseLayout
@@ -10,6 +11,23 @@ import { SiteConfig } from "@/content/config";
   description={SiteConfig.siteDescription}
 >
   <section class="container px-4 mx-auto py-8">
+    <!-- 🚀 Fork Me button at the top -->
+    <div class="flex justify-center mb-10">
+      <a
+        href="https://github.com/candelabyte-io/astro-portfolio"
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`group relative overflow-hidden rounded-xl shadow-md transition-all duration-300 
+          ${buttonVariants({ variant: "default", size: "lg" })}`}
+      >
+        <span class="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 opacity-80 group-hover:opacity-100 transition-opacity"></span>
+        <span class="relative flex items-center gap-2 font-semibold text-white">
+          <Github class="h-5 w-5" />
+          Fork me on GitHub
+        </span>
+      </a>
+    </div>
+
     <div class="flex flex-col items-center gap-6 mb-8 text-center">
       <h1 class="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
         Welcome to My Portfolio

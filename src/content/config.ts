@@ -27,11 +27,11 @@ export const collections = {
 };
 
 export const SiteConfig = {
-  postsPerPage: 10,
-  githubUrl: "https://github.com/jcarloscandela",
-  xUrl: "https://x.com/jcarloscandela",
-  linkedinUrl: "https://www.linkedin.com/in/jcarloscandela/",
-  instagramUrl: "",
+  postsPerPage: 5,
+  githubUrl: "https://github.com/candelabyte-io",
+  xUrl: "https://x.com/candelabyte",
+  linkedinUrl: "https://www.linkedin.com/in/candelabyte",
+  instagramUrl: "https://www.instagram.com/candelabyte",
   siteTitle: "Astro Portfolio",
   siteDescription: "A modern Astro template with Shadcn UI components.",
   defaultLanguage: "en",
