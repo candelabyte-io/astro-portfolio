@@ -1,6 +1,7 @@
 ---
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import { buttonVariants } from "@/components/ui/button";
+import { Github } from "lucide-react";
 import { SiteConfig } from "@/content/config";
 ---
 
@@ -13,9 +14,26 @@ import { SiteConfig } from "@/content/config";
       class="flex items-center gap-2 text-lg font-semibold"
       aria-label="Homepage"
     >
-      <span>{SiteConfig.siteTitle}</span>
-    </a>
+<span>{SiteConfig.siteTitle}</span>
 
+    </a>
+<a
+  href="https://github.com/candelabyte-io/astro-portfolio"
+  target="_blank"
+  rel="noopener noreferrer"
+  class={`group relative overflow-hidden rounded-2xl px-5 py-2.5 shadow-lg transition-all duration-300 
+    ${buttonVariants({ variant: "default", size: "lg" })}`}
+>
+  <span class="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 
+    bg-[length:200%_200%] animate-gradient-x opacity-80 group-hover:opacity-100 blur-md transition-opacity"></span>
+
+  <span class="absolute inset-0 rounded-2xl bg-white/10 backdrop-blur-sm"></span>
+
+  <span class="relative z-10 flex items-center gap-2 font-semibold text-white drop-shadow-md group-hover:scale-105 transition-transform">
+    <Github className="h-5 w-5" />
+    Fork me on GitHub
+  </span>
+</a>
 <nav class="flex items-center gap-2">
      <a
         href="/projects"
