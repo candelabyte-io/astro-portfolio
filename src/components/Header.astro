@@ -1,73 +1,47 @@
 ---
 import ThemeToggle from "@/components/ThemeToggle.astro";
-import { buttonVariants } from "@/components/ui/button";
 import { Github } from "lucide-react";
 import { SiteConfig } from "@/content/config";
+
+const navigationLinks = [
+  { href: "/projects", label: "Projects" },
+  { href: "/page/1", label: "Blog" },
+  { href: "/tags", label: "Tags" },
+  { href: "/about", label: "About" },
+  { href: SiteConfig.githubUrl, label: "GitHub", external: true },
+];
 ---
 
-<header
-  class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60"
->
+<header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
   <div class="container px-4 mx-auto flex h-16 items-center justify-between">
-    <a
-      href="/"
-      class="flex items-center gap-2 text-lg font-semibold"
-      aria-label="Homepage"
-    >
-<span>{SiteConfig.siteTitle}</span>
-
+    <a href="/" class="flex items-center gap-2 text-lg font-semibold" aria-label="Homepage">
+      <span>{SiteConfig.siteTitle}</span>
     </a>
-<a
-  href="https://github.com/candelabyte-io/astro-portfolio"
-  target="_blank"
-  rel="noopener noreferrer"
-  class={`group relative overflow-hidden rounded-2xl px-5 py-2.5 shadow-lg transition-all duration-300 
-    ${buttonVariants({ variant: "default", size: "lg" })}`}
->
-  <span class="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 
-    bg-[length:200%_200%] animate-gradient-x opacity-80 group-hover:opacity-100 blur-md transition-opacity"></span>
 
-  <span class="absolute inset-0 rounded-2xl bg-white/10 backdrop-blur-sm"></span>
-
-  <span class="relative z-10 flex items-center gap-2 font-semibold text-white drop-shadow-md group-hover:scale-105 transition-transform">
-    <Github className="h-5 w-5" />
-    Fork me on GitHub
-  </span>
-</a>
-<nav class="flex items-center gap-2">
-     <a
-        href="/projects"
-        class={buttonVariants({ variant: "ghost" })}
-      >
-        Projects
-      </a>
-      <a
-        href="/page/1"
-        class={buttonVariants({ variant: "ghost" })}
-      >
-        Blog
-      </a>
-      <a
-        href="/tags"
-        class={buttonVariants({ variant: "ghost" })}
-      >
-        Tags
-      </a>
-            <a
-        href="/about"
-        class={buttonVariants({ variant: "ghost" })}
-      >
-        About
-      </a>
-      <a
-        href={SiteConfig.githubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class={buttonVariants({ variant: "ghost" })}
-      >
-        GitHub
-      </a>
+    <nav class="flex items-center gap-2">
+      {navigationLinks.map((link) => (
+        <a
+          href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
+          class="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
       <ThemeToggle />
     </nav>
+
+  <a
+    href={SiteConfig.githubUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group relative inline-flex items-center gap-2 rounded-xl border border-border/50 bg-background px-5 py-2.5 font-semibold shadow-sm transition-all duration-300 hover:border-foreground/70 hover:shadow-md hover:scale-105"
+  >
+    <span class="absolute bottom-0 left-0 h-[2px] w-full scale-x-0 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 transition-transform duration-300 group-hover:scale-x-100"></span>
+
+    <Github class="h-5 w-5 text-foreground" />
+    <span class="text-foreground">Fork me on GitHub</span>
+  </a>
   </div>
 </header>
