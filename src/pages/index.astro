@@ -1,0 +1,45 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import LatestPosts from "@/components/LatestPosts.astro";
+import { SiteConfig } from "@/content/config";
+---
+
+<BaseLayout
+  title={SiteConfig.siteTitle}
+  description={SiteConfig.siteDescription}
+>
+  <section class="container px-4 mx-auto py-8">
+    <div class="flex flex-col items-center gap-6 mb-8 text-center">
+      <h1 class="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+        Welcome to My Portfolio
+      </h1>
+      <p class="text-lg text-muted-foreground max-w-2xl">
+        Explore my latest blog posts, projects, and learn more about my work as a software developer.
+      </p>
+      <a
+        href="/about"
+        class={buttonVariants({ variant: "default" })}
+      >
+        Learn More About Me
+      </a>
+    </div>
+
+    <LatestPosts />
+
+    <div class="flex justify-center gap-4 mt-8">
+      <a
+        href="/page/1"
+        class={buttonVariants({ variant: "outline" })}
+      >
+        More posts
+      </a>
+      <a
+        href="/projects"
+        class={buttonVariants({ variant: "outline" })}
+      >
+        View Projects
+      </a>
+    </div>
+  </section>
+</BaseLayout>

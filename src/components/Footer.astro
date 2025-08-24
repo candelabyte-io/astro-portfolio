@@ -1,0 +1,45 @@
+---
+import { SiteConfig } from "@/content/config";
+import { Github, Linkedin, Instagram } from "lucide-react";
+import { X as XIcon } from "lucide-react";
+---
+
+<footer class="border-t py-6 md:px-8 md:py-0">
+  <div
+    class="container w-full flex flex-col items-center justify-center gap-4 md:h-24 mx-auto"
+  >
+    <p class="text-muted-foreground text-center text-sm">
+      Built by
+      <a
+        href={SiteConfig.githubUrl}
+        target="_blank"
+        rel="noreferrer"
+        class="font-medium underline underline-offset-2"
+      >
+        jcarloscandela
+      </a>
+      <span class="flex w-full gap-2 justify-center mt-2">
+{SiteConfig.githubUrl && (
+  <a href={SiteConfig.githubUrl} target="_blank" rel="noreferrer" aria-label="GitHub">
+    <Github size={20} strokeWidth={2} />
+  </a>
+)}
+{SiteConfig.xUrl && (
+  <a href={SiteConfig.xUrl} target="_blank" rel="noreferrer" aria-label="X">
+    <XIcon size={20} strokeWidth={2} />
+  </a>
+)}
+{SiteConfig.linkedinUrl && (
+  <a href={SiteConfig.linkedinUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+    <Linkedin size={20} strokeWidth={2} />
+  </a>
+)}
+{SiteConfig.instagramUrl && SiteConfig.instagramUrl !== "" && (
+  <a href={SiteConfig.instagramUrl} target="_blank" rel="noreferrer" aria-label="Instagram">
+    <Instagram size={20} strokeWidth={2} />
+  </a>
+)}
+      </span>
+    </p>
+  </div>
+</footer>

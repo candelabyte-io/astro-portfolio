@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import { SiteConfig } from "../content/config";
+import { TagList } from "../components/ui/TagList";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+---
+
+<BaseLayout title={post.data.title} description={post.data.description ?? SiteConfig.siteDescription}>
+  <article class="container px-4 mx-auto py-8 max-w-3xl">
+<header class="mb-8">
+  {post.data.image && (
+    <img
+      src={post.data.image}
+      alt={post.data.title}
+      class="mb-4 rounded-lg w-full max-h-96 object-cover"
+      loading="lazy"
+    />
+  )}
+  <h1 class="text-4xl font-bold tracking-tight mb-2">
+    {post.data.title}
+  </h1>
+  <time class="text-muted-foreground" datetime={post.data.date.toISOString()}>
+    {formatDate(post.data.date)}
+  </time>
+  {post.data.tags && <TagList tags={post.data.tags} />}
+</header>
+    
+    <div class="prose dark:prose-invert max-w-none">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,55 @@
+---
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import { buttonVariants } from "@/components/ui/button";
+import { SiteConfig } from "@/content/config";
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60"
+>
+  <div class="container px-4 mx-auto flex h-16 items-center justify-between">
+    <a
+      href="/"
+      class="flex items-center gap-2 text-lg font-semibold"
+      aria-label="Homepage"
+    >
+      <span>{SiteConfig.siteTitle}</span>
+    </a>
+
+<nav class="flex items-center gap-2">
+      <a
+        href="/about"
+        class={buttonVariants({ variant: "ghost" })}
+      >
+        About
+      </a>
+      <a
+        href="/page/1"
+        class={buttonVariants({ variant: "ghost" })}
+      >
+        Blog
+      </a>
+      <a
+        href="/projects"
+        class={buttonVariants({ variant: "ghost" })}
+      >
+        Projects
+      </a>
+      <a
+        href="/tags"
+        class={buttonVariants({ variant: "ghost" })}
+      >
+        Tags
+      </a>
+      <a
+        href={SiteConfig.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={buttonVariants({ variant: "ghost" })}
+      >
+        GitHub
+      </a>
+      <ThemeToggle />
+    </nav>
+  </div>
+</header>

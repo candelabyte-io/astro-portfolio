@@ -1,0 +1,65 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SiteConfig } from "@/content/config";
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<BaseLayout
+  title="About | Juan Carlos Candela Bordera"
+  description="Learn more about Juan Carlos Candela Bordera - Computer Engineer & Software Developer based in Barcelona with 7+ years of experience in full-stack development, Azure cloud, and AI/ML."
+>
+  <section class="container px-4 mx-auto py-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex flex-col items-start gap-6 mb-8">
+        <h1 class="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+          About Me
+        </h1>
+        
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-muted-foreground">
+            Computer Engineer & Software Developer based in Barcelona. Passionate about efficient, maintainable code and modern web technologies. 7+ years of experience in full-stack development (.NET Core, Angular), Azure cloud, and AI/ML. Skilled in refactoring, best practices, and leading collaborative projects. Always learning, exploring Generative AI, and building scalable solutions.
+          </p>
+          
+          <h2 class="text-2xl font-bold mt-8 mb-4">Skills & Expertise</h2>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Full-stack development with .NET Core and Angular</li>
+            <li>Azure cloud services and infrastructure</li>
+            <li>AI/ML implementation and integration</li>
+            <li>Code refactoring and best practices</li>
+            <li>Project leadership and team collaboration</li>
+            <li>Modern web technologies and frameworks</li>
+          </ul>
+          
+          <h2 class="text-2xl font-bold mt-8 mb-4">Experience</h2>
+          <p>With over 7 years of professional experience, I've worked on various projects ranging from enterprise applications to innovative AI solutions. I specialize in creating robust, scalable software that meets both technical and business requirements.</p>
+          
+          <h2 class="text-2xl font-bold mt-8 mb-4">Current Focus</h2>
+          <p>Currently exploring Generative AI technologies and their applications in software development. Always interested in learning new technologies and methodologies to stay at the forefront of the industry.</p>
+        </div>
+      </div>
+
+      <div class="flex justify-center gap-4 mt-8">
+        <a
+          href="/projects"
+          class={buttonVariants({ variant: "default" })}
+        >
+          View Projects
+        </a>
+        <a
+          href="/page/1"
+          class={buttonVariants({ variant: "outline" })}
+        >
+          Read Blog
+        </a>
+        <a
+          href={SiteConfig.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={buttonVariants({ variant: "outline" })}
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
