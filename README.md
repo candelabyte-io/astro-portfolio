@@ -1,4 +1,4 @@
-# Astro shadcn/ui template
+# Candela Template
 
 > **Note:** This project is based on the work of [area44/astro-shadcn-ui-template](https://github.com/area44/astro-shadcn-ui-template).
 
@@ -13,8 +13,8 @@ Before you begin, ensure that you have **Node.js** and **pnpm** installed.
 ### Setup
 
 ```bash
-git clone https://github.com/jcarloscandela/astro-shadcn-ui-template
-cd astro-shadcn-ui-template
+git clone https://github.com/candelabyte-io/candela-template
+cd candela-template
 pnpm install
 pnpm dev
 ```
@@ -35,7 +35,7 @@ This template comes pre-configured for deployment on **Vercel**, **Netlify**, an
 
 ### Deploy to Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fjcarloscandela%2Fastro-shadcn-ui-template)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcandelabyte-io%2Fcandela-template)
 
 1. Click the "Deploy with Vercel" button above
 2. Connect your GitHub account
@@ -44,7 +44,7 @@ This template comes pre-configured for deployment on **Vercel**, **Netlify**, an
 
 ### Deploy to Netlify
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2Fjcarloscandela%2Fastro-shadcn-ui-template)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2Fcandelabyte-io%2Fcandela-template)
 
 1. Click the "Deploy to Netlify" button above
 2. Connect your GitHub account

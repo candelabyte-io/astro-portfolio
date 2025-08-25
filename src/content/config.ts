@@ -29,11 +29,12 @@ export const collections = {
 export const SiteConfig = {
   postsPerPage: 5,
   githubUrl: "https://github.com/candelabyte-io",
+  githubProjectURL: "https://github.com/candelabyte-io/candela-template",
   xUrl: "https://x.com/candelabyte",
   linkedinUrl: "https://www.linkedin.com/in/candelabyte",
   instagramUrl: "https://www.instagram.com/candelabyte",
-  siteTitle: "Astro Portfolio",
-  siteDescription: "A modern Astro template with Shadcn UI components.",
+  siteTitle: "Candela Template",
+  siteDescription: "Candela template build with Astro, TailwindCSS and shadcn/ui",
   defaultLanguage: "en",
   theme: "light",
 };
