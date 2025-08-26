@@ -34,7 +34,9 @@ export const SiteConfig = {
   linkedinUrl: "https://www.linkedin.com/in/candelabyte",
   instagramUrl: "https://www.instagram.com/candelabyte",
   siteTitle: "Candela Template",
-  siteDescription: "Candela template build with Astro, TailwindCSS and shadcn/ui",
+  siteDescription:
+    "Candela template build with Astro, TailwindCSS and shadcn/ui",
   defaultLanguage: "en",
   theme: "light",
+  showForkButton: true,
 };

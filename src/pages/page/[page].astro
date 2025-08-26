@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import { buttonVariants } from "@/components/ui/button";
-import BaseLayout from "@/layouts/BaseLayout.astro";
 import PostCard from "@/components/PostCard.astro";
+import { buttonVariants } from "@/components/ui/button";
 import { SiteConfig } from "@/content/config";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts", ({ data }) => !data.draft);

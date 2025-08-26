@@ -1,7 +1,7 @@
 ---
-import { getTagsWithCounts } from "@/lib/utils";
-import BaseLayout from "@/layouts/BaseLayout.astro";
 import { TagList } from "@/components/ui/TagList";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getTagsWithCounts } from "@/lib/utils";
 
 const tags = await getTagsWithCounts();
 ---

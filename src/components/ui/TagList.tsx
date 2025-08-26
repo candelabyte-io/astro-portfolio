@@ -12,14 +12,14 @@ interface TagListProps {
 export function TagList({ tags }: TagListProps) {
   // Check if tags are in the new format (with counts)
   const hasCounts = tags.length > 0 && typeof tags[0] !== "string";
-  
+
   return (
     <div className="flex flex-wrap gap-3 mt-2">
       {tags.map((tagItem) => {
         // Handle both formats of tags
         const tag = hasCounts ? (tagItem as Tag).tag : (tagItem as string);
         const count = hasCounts ? (tagItem as Tag).count : null;
-        
+
         return (
           <a
             key={tag}
