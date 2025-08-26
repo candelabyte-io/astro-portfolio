@@ -1,16 +1,23 @@
 ---
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const defaultTheme = Astro.props.defaultTheme || "dark";
 ---
 
-<Button variant="ghost" size="icon" id="themeToggle" data-default-theme="{SiteConfig.theme}">
+<Button
+  variant="ghost"
+  size="icon"
+  id="themeToggle"
+  data-default-theme={defaultTheme}
+>
   <Sun id="sunIcon" className="size-6" />
   <Moon id="moonIcon" className="size-5 hidden" />
   <span class="sr-only">Toggle theme</span>
 </Button>
 
 <script is:inline>
-  const defaultTheme = document.getElementById('themeToggle').dataset.defaultTheme || 'dark'
+  const defaultTheme = document.getElementById("themeToggle")?.dataset.defaultTheme || "dark";
 
   const applyTheme = (isDark) => {
     document.documentElement.classList.toggle("dark", isDark);
@@ -18,7 +25,7 @@ import { Button } from "@/components/ui/button";
   };
 
   const setInitialTheme = () => {
-    const storedTheme = localStorage?.getItem("theme");
+    const storedTheme = localStorage.getItem("theme");
     if (storedTheme) {
       applyTheme(storedTheme === "dark");
     } else {
