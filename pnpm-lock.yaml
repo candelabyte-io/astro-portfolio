@@ -60,9 +60,6 @@ importers:
       '@types/react-dom':
         specifier: ^19.1.7
         version: 19.1.7(@types/react@19.1.10)
-      biome-config-astro:
-        specifier: ^1.2.4
-        version: 1.2.4(@biomejs/biome@2.2.2)
       tw-animate-css:
         specifier: ^1.3.7
         version: 1.3.7
@@ -911,11 +908,6 @@ packages:
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
-
-  biome-config-astro@1.2.4:
-    resolution: {integrity: sha512-ff41vsdwhNkaUXtL4JtGeOhtaEGOreVYdTk17D4MqNWcbsRDgcDdujdw/CRGOutFufWEilo8n6ODar5ggbaJ4w==}
-    peerDependencies:
-      '@biomejs/biome': ^1
 
   blob-to-buffer@1.2.9:
     resolution: {integrity: sha512-BF033y5fN6OCofD3vgHmNtwZWRcq9NLyyxyILx9hfMy1sXYy4ojFl765hJ2lP0YaN2fuxPaLO2Vzzoxy0FLFFA==}
@@ -3047,10 +3039,6 @@ snapshots:
   base-64@1.0.0: {}
 
   base64-js@1.5.1: {}
-
-  biome-config-astro@1.2.4(@biomejs/biome@2.2.2):
-    dependencies:
-      '@biomejs/biome': 2.2.2
 
   blob-to-buffer@1.2.9: {}
 

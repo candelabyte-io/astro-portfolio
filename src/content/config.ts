@@ -36,7 +36,5 @@ export const SiteConfig = {
   siteTitle: "Candela Template",
   siteDescription:
     "Candela template build with Astro, TailwindCSS and shadcn/ui",
-  defaultLanguage: "en",
-  theme: "light",
-  showForkButton: true,
+  defaultLanguage: "en"
 };
